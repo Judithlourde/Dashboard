@@ -65,8 +65,7 @@ export default {
         removeTodoItem(index) {
             this.todoItems.splice(index, 1);
         },   
-    }
-    
+    }  
 }
 </script>
 

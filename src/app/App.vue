@@ -1,11 +1,11 @@
 <template>
     <section>
-        <div>
+        <aside>
             <Sidebar />
-        </div>
-        <div>
+        </aside>
+        <main>
             <RouterView />
-        </div> 
+        </main> 
     </section> 
 </template>
 
