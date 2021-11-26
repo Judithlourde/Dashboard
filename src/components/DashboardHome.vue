@@ -2,7 +2,7 @@
     <!-- <section class="container"> -->
         <section class="container__main">
             <div class="container__main--todoList">
-                <RouterLink :to="{ name: 'todolist' }">Add To List</RouterLink>
+                <Todolist />
             </div>
             <div class="container__main--slideShow">
                 <RouterLink :to="{ name: 'features' }">Features of this Bank</RouterLink>
@@ -11,7 +11,7 @@
                 <RouterLink :to="{ name: 'details' }">Customer Details</RouterLink>
             </div> 
             <div class="container__main--quizApp">
-                <RouterLink :to="{ name: 'quiz' }">Quiz App</RouterLink>
+                <QuizApp />
             </div>
             <div class="container__main--contactForm">
                 <RouterLink :to="{ name: 'contact' }">Contact Us</RouterLink>
@@ -21,6 +21,19 @@
 
 
 </template>
+
+<script>
+import Todolist from '../components/Todolist.vue'
+import QuizApp from '../components/QuizApp.vue'
+
+export default {
+    components: {
+        Todolist,
+        QuizApp
+    },
+}
+</script>
+
 
 <style scoped>
     .container__main {
@@ -45,6 +58,9 @@
     }
     .container__main--slideShow {
         background: linear-gradient(#7164e6, #9198e5);    
+    }
+    .container__main--quizApp{
+        overflow-y: scroll;
     }
     @media screen and (min-width:786px) {
         .container__main {
