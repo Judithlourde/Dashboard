@@ -12,7 +12,7 @@ const app_store = createStore(store);
 const app_router = createRouter({
 	routes: routes,
 	history: createWebHistory()
-})
+});
 
 createApp(App)
 	.use(app_store)
