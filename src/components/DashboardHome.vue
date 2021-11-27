@@ -3,10 +3,6 @@
         <section class="container__main">
             <div class="container__main--todoList">
                 <Todolist />
-<<<<<<< HEAD
-                <!-- <RouterLink :to="{ name: 'todolist' }">Add To List</RouterLink> -->
-=======
->>>>>>> 57954d0daee2f9c31b092125bb27723dca7ad5e0
             </div>
             <div class="container__main--slideShow">
                 <RouterLink :to="{ name: 'features' }">Features of this Bank</RouterLink>
@@ -16,12 +12,8 @@
                 <SortTableContent />    
             </div> 
             <div class="container__main--quizApp">
-<<<<<<< HEAD
                 <RouterLink :to="{ name: 'quiz' }">Quiz App</RouterLink>
-                <!-- <QuizApp /> -->
-=======
-                <QuizApp />
->>>>>>> 57954d0daee2f9c31b092125bb27723dca7ad5e0
+                
             </div>
             <div class="container__main--contactForm">
                 <RouterLink :to="{ name: 'contact' }">Contact Us</RouterLink>
@@ -41,27 +33,10 @@
             SortTableContent
             // QuizApp
 
-<<<<<<< HEAD
         },
     }
 </script>
 <style>
-=======
-<script>
-import Todolist from '../components/Todolist.vue'
-import QuizApp from '../components/QuizApp.vue'
-
-export default {
-    components: {
-        Todolist,
-        QuizApp
-    },
-}
-</script>
-
-
-<style scoped>
->>>>>>> 57954d0daee2f9c31b092125bb27723dca7ad5e0
     .container__main {
         height: 100vh;
         background: #F7F7F8;
