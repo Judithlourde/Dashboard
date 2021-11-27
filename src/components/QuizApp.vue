@@ -1,115 +1,124 @@
 <template>
   <div class="quiz">
       <div class="quiz__container">
-        <h1>{{quizName}}</h1>
-        <div class="quiz__header">
-            <h3> {{ quizData[quizId].question }} </h3>
+        <!-- Insert this unless quiz has no more questions -->
+        <div v-if="quizId < quizData.length">
+            <div class="quiz__name">
+                <h1>{{ quizName }}</h1>
+            </div>
+            <div class="quiz__header">
+                <h2> {{ quizData[quizId].question }} </h2>
+            </div>
+            <div class="quiz__image">
+                <img :src="quizData[quizId].image" :alt="quizData[quizId].alt">
+                <p class="quiz__image--text">{{ quizData[quizId].alt }}</p>
+            </div>
+            <div class="quiz__alternatives" v-for="(items, index) in quizData[quizId].      alternatives"
+                :key="quizData[quizId].alternatives[index]">
+                <button class="quiz__buttons" @click="selectAlternative(index)">{{items}}</button>
+            </div>
+            <div>
+                <button class="quiz__buttons" @click="nextQuestion">Neste spørsmål!</button>
+            </div>
+            <div>
+                <button class="quiz__buttons"> Poeng: {{ score }}</button>
+            </div>
         </div>
-        <div class="quiz__image">
-            <img :src="quizData[quizId].image" :alt="quizData[quizId].alt">
-        </div>
-        <div class="quiz__alternatives" v-for="(items, index) in quizData[quizId].alternatives">
-            <!-- :key="quizData[quizId].alternatives[index]" -->
-            <button @click="checkAnswer(index)">{{items}}</button>
-        </div>
-        <div>
-            <button @click="nextQuestion">Neste spørsmål!</button>
+        <!-- if quiz is at end, display this -->
+        <div v-else>
+            <h3>Gratulerer!</h3>
+            <p>Du fikk {{ score }} av {{ quizData.length }} poeng!</p>
+            <p>🥳</p>
         </div>
       </div>
   </div>
 </template>
 
 <script>
-import image1 from "../assets/images/blue.jpg"
-import image2 from "../assets/images/red.jpg"
-import image3 from "../assets/images/caesar.jpg"
-
 export default {
     data() {
         return {
-            quizName: "Quiz om...ting.",
             quizId: 0,
-            quizData: [ 
-                {
-                id: 1,
-                question: "Er 'blå' en farge?",
-                image: image1,
-                alt: "havet",
-                alternatives: [
-                    "Ja",
-                    "Nei"
-                    ],
-                answer: 0,
-            
-                },
-                {
-                id: 2,
-                question: "Hva med 'rød'?",
-                image: image2,
-                alt: "havet i solnedgang, muligens soloppgang, hvem vet",
-                alternatives: [
-                    "Nei",
-                    "Kanskje",
-                    "Ja",
-                    "Kanskje ikke"
-                    ],
-                answer: 2,
-                },
-                {
-                id: 3,
-                question: "Hvor ble cæsarsalaten oppfunnet?",
-                image: image3,
-                alt: "salat av type caesar",
-                alternatives: [
-                    "I Roma",
-                    "I Firenze",
-                    "I Monaco",
-                    "I Tijuana",
-                    "På Grünerløkka"
-                    ],
-                answer: 3,
-                }
-            ],
-            score: 0,
+            selected: null,
+            score: 0
         }
     },
     methods: {
         nextQuestion() {
-            this.quizId++
+            // this.updateScore;
+            if (this.selected === this.quizData[this.quizId].answer) {
+                this.score++;
+            }
+            this.quizId++;
         },
-        checkAnswer(index) {
+        // updateScore() {
+        // },
+        selectAlternative(index) {
             console.log(index)
-            console.log(this.quizData[this.quizId].answer)
+            this.selected = index;
+            console.log(this.selected);
         }
-    }
+    },
+    computed: {
+        quizName() {
+            return this.$store.getters.getQuizName
+        },
+        quizData() {
+            return this.$store.getters.getQuizData
+        }
+    },
 }
 </script>
 
 <style>
     .quiz {
-        padding: 2rem;
+        padding: 0.5em;
+        margin: auto;
+        width: 100%;
         text-align: center;
-        width: 80%;
-        /* background: lightgrey; */
-        margin: 1rem auto;
+    }
+    .quiz__container {
+        max-width: 1600px;
+    }
+    .quiz__name  h1 {
+        font-size: 2rem;
+    }
+    .quiz__header h2 {
+        font-size: 1.5rem;
     }
     .quiz__header {
-        margin: 50px;
+        margin: 20px;
     }
-    .quiz__image {
-        background-image: url();
+    .quiz__image img {
+        width: 90%;
+        max-width: 800px;
     }
-    .quiz__alternatives button
-    ,button {
-        min-width: 50%;
-        font-size: 1.5rem;
+    .quiz__image--text {
+        font-size: 0.9rem;
+        color: gray;
+    }
+    .quiz__buttons {
+        width: 75%;
+        min-width: fit-content;
+        max-width: 400px;
+        font-size: 1rem;
         padding: 0.3em;
         margin: 0.5em 0;
         background: white;
-        border-radius: 2em;
+        border-radius: 2rem;
     }
-    button:hover {
-        background: rgb(186, 231, 186);
+    .quiz__buttons--selected {
+        background: lightgreen;
+    }
+    .quiz__buttons:hover {
         transform: scale(1.05);
+        border-color: transparent;
+        outline: green solid 3px;
     }
+
+   @media screen and (max-width: px) {
+       .quiz__image img {
+        width: 90%;
+    }
+}
 </style>
