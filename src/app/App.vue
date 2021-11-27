@@ -1,9 +1,9 @@
 <template>
-    <section>
+    <section class="dashboard-section">
         <aside>
             <Sidebar />
         </aside>
-        <main>
+        <main class="dashboard-section__main">
             <RouterView />
         </main> 
     </section> 
@@ -19,10 +19,7 @@
 </script>
 
 <style>
-    section {
-        height: 100vh; 
-        display: grid;
-        grid-template-columns: 200px 2fr;
-        grid-template-rows: 1fr 1fr;
-    }
+    @import '../css/reset.css';
+	@import '../css/variables.css';
+	@import '../css/style.css';
 </style>

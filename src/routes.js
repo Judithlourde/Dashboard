@@ -9,7 +9,7 @@ import ContactPage from './views/ContactPage.vue';
 // Export the View-Page routes => this will be shown in the URL
 export default [
     { name: 'contact', path: '/contact-form', component: ContactPage },
-    { name: 'details', path: '/details-table', component: CustomerDetailsTable },
+    { name: 'details', path: '/details', component: CustomerDetailsTable },
     { name: 'todolist', path: '/todolist', component: TodoList },
     { name: 'quiz', path: '/quiz', component: QuizApp },
     { name: 'features', path: '/features', component: Features },

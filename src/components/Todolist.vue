@@ -3,10 +3,12 @@
         <header>
             <h1>To Do List</h1>
         </header>
+
         <main>
             <div class="list-container__enterItems">
                 <input type="text" placeholder="+ Add a task and press Enter" v-model="todoEntered" @keyup.enter="addToList">
             </div>
+
             <!-- Find the index helps for the slice() method -->
             <div v-for="(todoItem, index) in todoItems"
                 :key="todoItem.id"

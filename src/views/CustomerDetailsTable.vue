@@ -1,11 +1,11 @@
 <template>
-    <SortTable />
+    <SortTableContent />
 </template>
 <script>
-    import SortTable from '../components/SortTable.vue';
+    import SortTableContent from '../components/SortTableContent.vue';
     export default {
         components: {
-            SortTable
+            SortTableContent,
         },
     }
 </script>
