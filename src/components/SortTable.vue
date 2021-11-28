@@ -14,8 +14,7 @@ export default {
         transactiondate: String, 
         description: String,
         transaction: String,
-    },
-    
+    },    
 }
 </script>
 

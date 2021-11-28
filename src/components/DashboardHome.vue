@@ -8,12 +8,12 @@
                 <RouterLink :to="{ name: 'features' }">Features of this Bank</RouterLink>
             </div>
             <div class="container__main--sortTable">
-                <!-- <RouterLink :to="{ name: 'details' }">Customer Details</RouterLink> -->
-                <SortTableContent />    
+                <RouterLink :to="{ name: 'details' }">Customer Details</RouterLink>
+                <!-- <SortTableContent />     -->
             </div> 
             <div class="container__main--quizApp">
                 <RouterLink :to="{ name: 'quiz' }">Quiz App</RouterLink>
-                
+                <!-- <QuizApp /> -->
             </div>
             <div class="container__main--contactForm">
                 <RouterLink :to="{ name: 'contact' }">Contact Us</RouterLink>
