@@ -13,11 +13,16 @@
                 <img :src="quizData[quizId].image" :alt="quizData[quizId].alt">
                 <p class="quiz__image--text">{{ quizData[quizId].alt }}</p>
             </div>
-            <div class="quiz__alternatives" v-for="(items, index) in quizData[quizId].alternatives"
+            <div class="quiz__alternatives"     
+                v-for="(items, index) in quizData[quizId].alternatives"
                 :key="quizData[quizId].alternatives[index]">
-                <button class="quiz__buttons" 
-                :class="{ 'quiz__buttons--selected': selected }"
-                @click="selectAlternative(index)">{{items}}</button>
+                <!-- How the heck do i bind classes to only one button at a time!? -->
+                <!-- edit: I MADE IT! if index === selected!!!-->
+                <button class="quiz__buttons"
+                :class=" index === selected ? 'quiz__buttons--selected' : '' "
+                @click="selectAlternative(index)"
+                >{{items}}</button>
+
             </div>
             <div>
                 <button class="quiz__buttons" @click="nextQuestion">Neste spørsmål!</button>
@@ -47,17 +52,14 @@ export default {
     },
     methods: {
         nextQuestion() {
-            // this.updateScore;
             if (this.selected === this.quizData[this.quizId].answer) {
                 this.score++;
             }
             this.quizId++;
+            this.selected = null;
         },
-        // updateScore() {
-        // },
         selectAlternative(index) {
-            this.selected = index;
-            console.log(index)
+            this.selected = index;           
         }
     },
     computed: {
@@ -66,7 +68,7 @@ export default {
         },
         quizData() {
             return this.$store.getters.getQuizData
-        }
+        },
     },
 }
 </script>
@@ -99,6 +101,7 @@ export default {
         color: gray;
     }
     .quiz__buttons {
+        text-align: center;
         width: 75%;
         min-width: fit-content;
         max-width: 400px;
