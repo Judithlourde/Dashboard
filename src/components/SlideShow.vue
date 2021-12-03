@@ -64,8 +64,8 @@
 	@media screen and (min-width:786px) {
 		.slideshow {
 			position: relative;
-			height: 80vh;
-			width: 80vw;
+			height: 80%;
+			width: 80%;
 			margin: 20px;
 		}
 	}
