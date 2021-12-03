@@ -5,6 +5,7 @@
         <div v-if="quizId < quizData.length">
             <div class="quiz__name">
                 <h1>{{ quizName }}</h1>
+                <p>Question {{quizId + 1}}</p>
             </div>
             <div class="quiz__header">
                 <h2> {{ quizData[quizId].question }} </h2>
@@ -25,17 +26,27 @@
 
             </div>
             <div>
-                <button class="quiz__buttons" @click="nextQuestion">Neste spørsmål!</button>
+                <button class="quiz__buttons quiz__buttons--answer" @click="nextQuestion">Next question!</button>
             </div>
             <div>
-                <button class="quiz__buttons"> Poeng: {{ score }}</button>
+                <button class="quiz__buttons quiz__score"> Points so far: {{ score }}</button>
             </div>
         </div>
         <!-- if quiz is at end, display this -->
         <div v-else>
-            <h3>Gratulerer!</h3>
-            <p>Du fikk {{ score }} av {{ quizData.length }} poeng!</p>
-            <p>🥳</p>
+            <div v-if="score > quizData.length / 2">
+                <h3>Gratulerer!</h3>
+                <p>Du fikk {{ score }} av {{ quizData.length }} poeng!</p>
+                <p>🥳</p>
+            </div>
+            <div v-else> 
+                <h3>Bedre lykke neste gang!</h3>
+                <p>Du fikk {{ score }} av {{ quizData.length }} poeng!</p>
+                <p>🙃</p>
+            </div>
+            <div>
+                <button class="quiz__buttons" @click="resetGame">Try again</button>
+            </div>
         </div>
       </div>
   </div>
@@ -52,6 +63,10 @@ export default {
     },
     methods: {
         nextQuestion() {
+            if (this.selected === null) {
+                alert('You have not selected an option. Please do so.')
+                return
+            }
             if (this.selected === this.quizData[this.quizId].answer) {
                 this.score++;
             }
@@ -60,6 +75,10 @@ export default {
         },
         selectAlternative(index) {
             this.selected = index;           
+        },
+        resetGame() {
+            this.quizId = 0,
+            this.score = 0
         }
     },
     computed: {
@@ -100,7 +119,8 @@ export default {
         font-size: 0.9rem;
         color: gray;
     }
-    .quiz__buttons {
+    .quiz__buttons,
+    .quiz__buttons--answer {
         text-align: center;
         width: 75%;
         min-width: fit-content;
@@ -109,16 +129,27 @@ export default {
         padding: 0.3em;
         margin: 0.5em 0;
         background: white;
+        border: 1px solid black;
         border-radius: 2rem;
     }
     .quiz__buttons--selected {
-        background: lightgreen;
+        background: lightblue;
     }
     .quiz__buttons:hover {
         transform: scale(1.05);
         border-color: transparent;
-        outline: green solid 3px;
+        outline: blue solid 3px;
     }
+    .quiz__buttons--answer:hover {
+        outline: black solid 1px;
+    }
+    .quiz__score,
+    .quiz__score:hover {
+        border-style: none;
+        outline: none;
+        cursor: default;
+    }
+  
 
    @media screen and (max-width: px) {
        .quiz__image img {

@@ -5,47 +5,49 @@ import image3 from "../assets/images/caesar.jpg"
 export default {
     state() {
         return {
-            quizName: "Quiz om...ting.",
+            quizName: "The big fat quiz about finance and stuff.",
             // quizId: 0,
             quizData: [ 
                 {
                 id: 1,
-                question: "Er 'blå' en farge?",
+                question: "How much money is the ocean worth?",
                 image: image1,
-                alt: "havet",
+                alt: "the ocean is heckin´ huge!",
                 alternatives: [
-                    "Ja",
-                    "Nei"
+                    "$100",
+                    "$100.000",
+                    "$100.000.000",
+                    "Nobody knows..."
                     ],
-                answer: 0,
+                answer: 3,
             
                 },
                 {
                 id: 2,
-                question: "Hva med 'rød'?",
+                question: "The sun is also pretty big. How many nickles could you fit across it?",
                 image: image2,
-                alt: "havet i solnedgang, muligens soloppgang, hvem vet",
+                alt: "the sun is ludicrously beeg!",
                 alternatives: [
-                    "Nei",
-                    "Kanskje",
-                    "Ja",
-                    "Kanskje ikke"
+                    "A couple",
+                    "A few",
+                    "Some",
+                    "A lot"
                     ],
-                answer: 2,
+                answer: 3,
                 },
                 {
                 id: 3,
-                question: "Hvor ble cæsarsalaten oppfunnet?",
+                question: "Where are caesar-salads most expensive?",
                 image: image3,
-                alt: "salat av type caesar",
+                alt: "caesar salads; the new currency?",
                 alternatives: [
-                    "I Roma",
-                    "I Firenze",
-                    "I Monaco",
-                    "I Tijuana",
-                    "På Grünerløkka"
+                    "In Rome",
+                    "In Florence",
+                    "In Monaco",
+                    "In Tijuana",
+                    "In Oslo"
                     ],
-                answer: 3,
+                answer: 4,
                 }
             ],
             // score: 0,

@@ -5,6 +5,9 @@ body {
 a {
     text-decoration: none;
 }
+button {
+    cursor: pointer;
+}
 .dashboard-section {
     height: 100vh; 
     display: grid;
