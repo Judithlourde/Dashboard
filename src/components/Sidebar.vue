@@ -20,7 +20,7 @@
                 <li>
                     <RouterLink :to="{ name: 'features' }">
                         <img src="../assets/svg/features.svg" alt="features-logo">
-                        <p>Features</p>  
+                        <p>Loans</p>  
                     </RouterLink>
                 </li>
                 <li>
@@ -30,7 +30,7 @@
                     </RouterLink>
                 </li>
                 <li>
-                    <RouterLink :to="{ name: 'details' }">
+                    <RouterLink :to="{ name: 'transaction' }">
                         <img src="../assets/svg/table.svg" alt="sort-table-logo">
                         <p>Overview</p>  
                     </RouterLink>
@@ -54,21 +54,21 @@
         /* border-right: 1px solid #9966CC; */
         width: 100%;
         height: 100vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-        align-items: center;
+        display: grid;
+        grid-template-rows: repeat(7, 1fr);
+        padding: 30px;
     }
     ol > li {
         list-style: none;
     }
     a {
         color: #000;
+        /* display: grid; */
+        /* grid-template-columns: 50px 150px; */
         display: flex;
         flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        gap: 20px;
+        gap: 10px;
+        
     }
 
 </style>
