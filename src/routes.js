@@ -1,10 +1,10 @@
 // Import View(Pages) Linkes to the routes.js file
-import Dashboard from './views/Dashboard.vue';
-import Features from './views/Features.vue';
-import QuizApp from './views/QuizApp.vue';
-import TodoList from './views/TodoList.vue';
-import CustomerDetailsTable from './views/CustomerDetailsTable.vue';
-import ContactPage from './views/ContactPage.vue';
+import Dashboard from './views/DashboardHome.vue';
+import Features from './components/SlideShow.vue';
+import QuizApp from './components/QuizApp.vue';
+import TodoList from './components/TodoList.vue';
+import CustomerDetailsTable from './components/SortTableContent.vue';
+import ContactPage from './components/ContactForm.vue';
 
 // Export the View-Page routes => this will be shown in the URL
 export default [
