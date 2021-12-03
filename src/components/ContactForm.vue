@@ -36,7 +36,9 @@
                 <div class="form__element form__element--message">
                     <div>
                         <label for="message">Message</label> <br>
-                        <input type="text" size="50">
+                        <textarea id="" name="message" rows="4" cols="25">
+                        </textarea>
+                        <!-- <input type="text" size="50"> -->
                     </div>
                 </div>
 
@@ -72,8 +74,13 @@ export default {
 
 <style>
     .contact-container {
+<<<<<<< HEAD
         /* background: #f7f7f8; */
         width: 100%;
+=======
+        max-width: 100%;
+        background: #f7f7f8;
+>>>>>>> 1d3024140431af93cc263a01ffc6143236ef526a
         height: 100%;
 
     
@@ -98,7 +105,7 @@ export default {
     }
     .form__element {
         display: flex;
-        flex-flow: row nowrap;
+        flex-flow: row wrap;
         justify-content: space-between;
     }
     .form__element input,
@@ -119,8 +126,12 @@ export default {
     .form__element--message input {
         width: 90%;
     }
-    .form__element label{
+    .form__element textarea {
+        font-size: 1.5rem;
         text-align: left;
+    }
+    .form__element label{
+        /* text-align: left; */
         font-size: 0.7em;
         color: gray;
       

@@ -22,4 +22,5 @@
     @import '../css/reset.css';
 	@import '../css/variables.css';
 	@import '../css/style.css';
+	@import '../css/fonts.css';
 </style>

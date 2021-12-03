@@ -94,6 +94,7 @@ export default {
 
 <style>
     .quiz {
+        font-family: 'Ubuntu', sans-serif;
         padding: 0.5em;
         /* margin: auto; */
         height: 100%;

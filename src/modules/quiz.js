@@ -48,6 +48,20 @@ export default {
                     "In Oslo"
                     ],
                 answer: 4,
+                },
+                {
+                id: 4,
+                question: "tralalala?",
+                image: image3,
+                alt: "lalala?",
+                alternatives: [
+                    "la",
+                    "le",
+                    "li",
+                    "lo",
+                    "lu"
+                    ],
+                answer: 0,
                 }
             ],
             // score: 0,
