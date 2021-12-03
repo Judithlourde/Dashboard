@@ -95,12 +95,13 @@ export default {
 <style>
     .quiz {
         padding: 0.5em;
-        margin: auto;
+        /* margin: auto; */
+        height: 100%;
         width: 100%;
         text-align: center;
     }
     .quiz__container {
-        max-width: 1600px;
+        /* max-width: 1600px; */
     }
     .quiz__name  h1 {
         font-size: 2rem;
@@ -151,7 +152,7 @@ export default {
     }
   
 
-   @media screen and (max-width: px) {
+   @media screen and (max-width: 786px) {
        .quiz__image img {
         width: 90%;
     }

@@ -14,9 +14,9 @@
                 <div class="todoList__content" v-if="!todoItem.taskStatus" >
                     <div @click="addToCompleted(todoItem.id, index)">
                         <img src="../assets/svg/circlewithoutfill.svg" alt="plus-icon">
-                    <!-- </div>
+                    </div>
 
-                    <div> -->
+                    <div>
                         <div v-if="!todoItem.editing">{{ todoItem.task }}</div>
 
                         <input v-else type="text" v-model="todoItem.task" @keyup.enter="finishEdit(todoItem)">
@@ -42,8 +42,6 @@
                             <div>{{ todoCompletedItem.task }}</div>
                         </div>
 
-                        
-
                         <div class="todoList__remove" @click="removeTodoItem(index)">
                             <img src="../assets/svg/remove.svg" alt="remove-icon">
                         </div>
@@ -59,7 +57,7 @@ export default {
     data() {
         return {
             todoEntered: '',
-            idForItem: 1,
+            // idForItem: 1,
             edit: false,
             todoItems: [],
             todoCompletedItems: [],
@@ -75,7 +73,7 @@ export default {
             }
             this.todoItems.push (
                 {
-                    id: this.idForItem,
+                    id: this.id(),
                     task: this.todoEntered,
                     editing: this.edit,
                     taskStatus: this.status,
@@ -83,8 +81,11 @@ export default {
                 }
             );
             this.todoEntered = ''
-            this.idForItem++
+            // this.idForItem++
         },
+        id() {
+			return Math.random().toString(36).slice(2);
+		},
         editTodo(todoItem) {
             todoItem.editing = true
         },
@@ -101,12 +102,12 @@ export default {
                 this.todoCompletedItems.push( {
                     task: completedTask.task,
                     id: completedTask.id,
-                    editing: completedTask.editing,
-                    taskStatus: completedTask.taskStatus,
+                    // editing: completedTask.editing,
+                    // taskStatus: completedTask.taskStatus,
                     count: completedTask.count
                 });
                 this.count++
-        },
+        },    
     },
 }
 </script>
@@ -115,12 +116,12 @@ export default {
     .todoList {
         display: flex;
         flex-direction: column;
-        margin: 50px auto;
-        /* width: 80vw; */
-        height: 80vh;
+        /* margin: 50px auto; */
+        width: 100%;
+        height: 100%;
         font-size: 20px;
-        border-radius: 15px;
-        box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, .1);
+        /* border-radius: 15px; */
+        /* box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, .1); */
     }
 
     .todoList > header {
@@ -190,7 +191,7 @@ export default {
         cursor: pointer;
         padding: 0 20px 0 0;
     }
-    
+
     input {
         font-size: inherit;
         font-family: inherit;

@@ -61,28 +61,27 @@
 </script>
 
 <style>
-	@media screen and (min-width:786px) {
-		.slideshow {
-			position: relative;
-			height: 80%;
-			width: 80%;
-			margin: 20px;
-		}
+	.slideshow {
+		position: relative;
+		width: 100%;
+		height: 100%;
+		display: flex;	
 	}
+	
 	.slideshow:hover .slideshow__caption {
 		opacity: 1;
 	}
 
 	.slideshow__slides {
-		position: absolute;
-		top: 60px;
-		left: 0;
+		/* position: absolute;
+		top: 0;
+		left: 0; */
 		width: 100%;
 		height: 100%;
 	}
 
 	.slideshow__slide {
-		position: absolute;
+		/* position: absolute; */
 		width: 100%;
 		height: 100%;
 	}
@@ -100,15 +99,15 @@
 		width: 100%;
 		text-align: center;
 		font-size: 0.75em;
-		padding: 0.5em;
+		/* padding: 0.5em; */
 	}
 
-	.slideshow__extra {
+	/* .slideshow__extra {
 		position: absolute;
 		top: 0;
 		left: 0;
 		z-index: 10;
-	}
+	} */
 
 	.slideshow__button-caption {
 		padding: 0.5em;

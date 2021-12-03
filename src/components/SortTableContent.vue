@@ -93,10 +93,16 @@
 
 <style>
     .sortTable {
-        margin: 50px auto;
-        max-width: 60vw;
-        max-height: 100vh;
+        /* margin: 50px auto; */
+        /* max-width: 60vw; */
+        /* max-height: 100vh; */
         /* overflow-y: scroll ; */
+        width: 100%;
+        height: 100%;
+        font-size: 20px;
+        display: flex;
+        flex-direction: column;
+        
     }
     .sortTable__header {
         padding: 20px;
@@ -105,19 +111,24 @@
         padding: 10px 0;
     }
     .sortTable__header > div {
+        width: 100%;
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
+        gap: 5px;
     }
     .sortTable__header__date, 
     .sortTable__header__transaction {
         display: flex;
         flex-direction: row;
-        gap: 10px;
+        /* gap: 10px; */
         cursor: pointer;
     } 
     .sortTable__main {
+        width: 100%;
+        height: 100%;
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         padding: 20px;
+        gap: 5px;
     }
 </style>

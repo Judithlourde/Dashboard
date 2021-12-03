@@ -72,19 +72,25 @@ export default {
 
 <style>
     .contact-container {
-        background: #f7f7f8;
+        /* background: #f7f7f8; */
+        width: 100%;
         height: 100%;
-        padding-top: 1em;
-        
+
+    
+
+        display: flex;
+        flex-direction: column;
+        /* padding-top: 1em; */
     }
     .form {
-        width: 90%;
-        max-width: 700px;
-        margin: 2em;
-        padding: 1em;
-        background: #fcfcfc;
-        border: 1px solid gray;
-        border-radius: 0.5em;
+        /* width: 100%; */
+        /* width: 90%; */
+        /* max-width: 700px; */
+        /* margin: 2em; */
+        /* padding: 1em; */
+        /* background: #fcfcfc; */
+        /* border: 1px solid gray; */
+        /* border-radius: 0.5em; */
 
     }
     .form__header {
@@ -104,8 +110,11 @@ export default {
         display: block;
     }
     .form__element--categories {
+
         font-size: 1.5rem;
         border: 1px solid black;
+
+        /* border: 1px solid black; */
     }
     .form__element--message input {
         width: 90%;
@@ -119,15 +128,15 @@ export default {
     .form__element input,
     .form__element select {
         padding: 0.5em;
-        border-style: 1px solid black;
+        /* border-style: 1px solid black; */
         border-radius: 5px;
         /* border-bottom: 1px dotted black; */
         margin-bottom: 1em;
     }
 
     @media screen and (max-width: 465px) {
-        .form__element {
+        /* .form__element {
             display: block;
-        }
+        } */
     }
 </style>

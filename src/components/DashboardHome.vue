@@ -1,28 +1,25 @@
 <template>
-    <!-- <section class="container"> -->
-        <section class="container__main">
-            <div class="container__main--todoList">
-                <Todolist />
-            </div>
-            <div class="container__main--slideShow">
-                <SlideShow />
-                <!-- <SlideShow /> -->
-            </div>
-            <div class="container__main--sortTable">
-                <SortTableContent />
-                <!-- <SortTableContent />     -->
-            </div> 
-            <div class="container__main--quizApp">
-                <QuizApp />
-                <!-- <QuizApp /> -->
-            </div>
-            <div class="container__main--contactForm">
-                <ContactForm />
-            </div>
+    <section class="dasboard">
+        <div class="dashboard__todolist">
+            <Todolist />
+        </div>
+
+        <div class="dashboard__slideshow">
+            <SlideShow />
+        </div>
+
+        <div class="dashboard__sort-table">
+            <SortTableContent />    
+        </div>
+
+        <div class="dashboard__quiz-app">
+            <QuizApp />
+        </div>
+
+        <div class="dashboard__contact-form">
+            <ContactForm />
+        </div>
         </section>
-    <!-- </section> -->
-
-
 </template>
 <script>
     import Todolist from '../components/Todolist.vue';
@@ -36,48 +33,34 @@
             Todolist,
             SortTableContent,
             SlideShow,
-            QuizApp,
+            QuizApp, 
             ContactForm
-
         },
     }
 </script>
 <style>
-    .container__main {
-        min-height: fit-content;
+    .dasboard {
+        width: 100%;
+        height: 100vh;
         background: #F4F6FB;
-        /* margin: 20px; */
         border: 1px solid #eee;
         box-shadow: 2px lightgray;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        gap: 10px;
     }
 
-    .container__main > * {
+    .dashboard__todolist {
+        grid-row: 1/3;
+    }
+
+    .dasboard > * {
+        width: 100%;
         background: #fff;
-        display: flex;
-        justify-content: center;
-        align-items: center;
         margin: 20px;
         border: 1px solid #eee;
         border-radius: 10px;
-    }
-
-    .container__main--slideShow {
-        background: linear-gradient(#7164e6, #9198e5);    
-    }
-
-    .container__main--quizApp{
-        overflow-y: scroll;
-    }
-
-    @media screen and (min-width:786px) {
-        .container__main {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            grid-template-rows: 1fr 1fr;
-        }
-        
-        .container__main--todoList {
-            grid-row: 1/3;
-        }
+        overflow: scroll;
     }
 </style>
