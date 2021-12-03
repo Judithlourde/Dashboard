@@ -29,19 +29,22 @@
     import SortTableContent from '../components/SortTableContent.vue';
     import SlideShow from '../components/SlideShow.vue';
     import QuizApp from '../components/QuizApp.vue';
+    import ContactForm from '../components/ContactForm.vue';
+
     export default {
         components: {
             Todolist,
             SortTableContent,
             SlideShow,
-            QuizApp
+            QuizApp,
+            ContactForm
 
         },
     }
 </script>
 <style>
     .container__main {
-        height: 100vh;
+        min-height: fit-content;
         background: #F4F6FB;
         /* margin: 20px; */
         border: 1px solid #eee;
