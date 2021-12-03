@@ -28,13 +28,7 @@
                         </div>
                     </div>
                     <div>
-                        <label for="categories">Choose a Category</label> <br>
-                        <input class="form__element--categories" list="bank-services" name="categories">
-                        <datalist class ="form__element--categories" id="bank-services">
-                            <option value="House loan" />
-                            <option value="Car loan" />
-                            <option value="Soul loan" />
-                        </datalist>
+                        <Loans />
                     </div>
 
                 </div>
@@ -48,8 +42,8 @@
 
                 <div class="form__element form__element--conditions">
                     <div>
-                        <input type="checkbox">
-                        <label for="">I HAVE READ THE TERMS AND CONDITIONS</label>
+                        <input type="checkbox" name="terms">
+                        <label for="terms">I HAVE READ THE <span><a href="">TERMS AND CONDITIONS</a></span> </label>
                     </div>
                 </div>
             </fieldset>
@@ -58,9 +52,12 @@
 </template>
 
 <script>
-// import { defineComponent } from '@vue/composition-api'
+import Loans from './Loans.vue'
 
 export default {
+    components: {
+        Loans
+    },
     data() {
         return {
         firstName:'',
@@ -73,11 +70,12 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
     .contact-container {
         background: #f7f7f8;
         height: 100%;
         padding-top: 1em;
+        
     }
     .form {
         width: 90%;
@@ -87,6 +85,7 @@ export default {
         background: #fcfcfc;
         border: 1px solid gray;
         border-radius: 0.5em;
+
     }
     .form__header {
         margin: 0.5em;
@@ -96,10 +95,16 @@ export default {
         flex-flow: row nowrap;
         justify-content: space-between;
     }
+    .form__element input,
+    .form__element label {
+        font-size: 1.5rem;
+    }
+
     .form__element--condtitions {
         display: block;
     }
     .form__element--categories {
+        font-size: 1.5rem;
         border: 1px solid black;
     }
     .form__element--message input {
@@ -111,7 +116,8 @@ export default {
         color: gray;
       
     }
-    .form__element input {
+    .form__element input,
+    .form__element select {
         padding: 0.5em;
         border-style: 1px solid black;
         border-radius: 5px;

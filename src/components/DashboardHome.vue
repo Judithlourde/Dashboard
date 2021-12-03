@@ -5,19 +5,19 @@
                 <Todolist />
             </div>
             <div class="container__main--slideShow">
-                <RouterLink :to="{ name: 'features' }">Features of this Bank</RouterLink>
+                <SlideShow />
                 <!-- <SlideShow /> -->
             </div>
             <div class="container__main--sortTable">
-                <RouterLink :to="{ name: 'transaction' }">Customer Details</RouterLink>
+                <SortTableContent />
                 <!-- <SortTableContent />     -->
             </div> 
             <div class="container__main--quizApp">
-                <RouterLink :to="{ name: 'quiz' }">Quiz App</RouterLink>
+                <QuizApp />
                 <!-- <QuizApp /> -->
             </div>
             <div class="container__main--contactForm">
-                <RouterLink :to="{ name: 'contact' }">Contact Us</RouterLink>
+                <ContactForm />
             </div>
         </section>
     <!-- </section> -->
@@ -27,14 +27,14 @@
 <script>
     import Todolist from '../components/Todolist.vue';
     import SortTableContent from '../components/SortTableContent.vue';
-    // import SlideShow from '../components/SlideShow.vue';
-    // import QuizApp from '../components/QuizApp.vue';
+    import SlideShow from '../components/SlideShow.vue';
+    import QuizApp from '../components/QuizApp.vue';
     export default {
         components: {
             Todolist,
             SortTableContent,
-            // SlideShow
-            // QuizApp
+            SlideShow,
+            QuizApp
 
         },
     }
