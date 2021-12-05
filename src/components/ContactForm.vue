@@ -74,43 +74,38 @@ export default {
 
 <style>
     .contact-container {
-<<<<<<< HEAD
-        /* background: #f7f7f8; */
-        width: 100%;
-=======
+      
+        font-size: .85rem;
+        /* width: 100%;
         max-width: 100%;
-        background: #f7f7f8;
->>>>>>> 1d3024140431af93cc263a01ffc6143236ef526a
-        height: 100%;
-
-    
-
+        height: 100%; */
         display: flex;
         flex-direction: column;
         /* padding-top: 1em; */
     }
     .form {
-        /* width: 100%; */
-        /* width: 90%; */
-        /* max-width: 700px; */
-        /* margin: 2em; */
-        /* padding: 1em; */
+        border: none;
+        padding: .5em;
         /* background: #fcfcfc; */
         /* border: 1px solid gray; */
-        /* border-radius: 0.5em; */
+        /* border-radius: 0.5em;
+        box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, .1); */
 
     }
     .form__header {
-        margin: 0.5em;
+        /* margin: 0.5em; */
     }
     .form__element {
         display: flex;
         flex-flow: row wrap;
+        flex-direction: column;
         justify-content: space-between;
+        align-items: flex-start;
+        padding: .15em;
     }
     .form__element input,
     .form__element label {
-        font-size: 1.5rem;
+        font-size: 1em;
     }
 
     .form__element--condtitions {
@@ -118,31 +113,30 @@ export default {
     }
     .form__element--categories {
 
-        font-size: 1.5rem;
+        /* font-size: 1.5rem; */
         border: 1px solid black;
 
         /* border: 1px solid black; */
     }
     .form__element--message input {
-        width: 90%;
+        /* width: 90%; */
     }
     .form__element textarea {
-        font-size: 1.5rem;
+        font-size: 1.5em;
         text-align: left;
     }
     .form__element label{
         /* text-align: left; */
-        font-size: 0.7em;
+        font-size: 0.75em;
         color: gray;
       
     }
     .form__element input,
     .form__element select {
         padding: 0.5em;
-        /* border-style: 1px solid black; */
         border-radius: 5px;
-        /* border-bottom: 1px dotted black; */
-        margin-bottom: 1em;
+        border: 1px dotted rgb(27, 26, 26); 
+        /* margin-bottom: 1em; */
     }
 
     @media screen and (max-width: 465px) {

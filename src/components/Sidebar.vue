@@ -11,14 +11,14 @@
                     </RouterLink>
                 </li>
                 <li>
-                    <RouterLink :to="{ name: 'todolist' }">
+                    <RouterLink :to="{ name: 'todolist'}">
                         <img src="../assets/svg/todo.svg" alt="to-do-logo">
                         <p>To Do List</p>  
                     </RouterLink>
 
                 </li>
                 <li>
-                    <RouterLink :to="{ name: 'features' }">
+                    <RouterLink :to="{ name: 'features'}">
                         <img src="../assets/svg/features.svg" alt="features-logo">
                         <p>Loans</p>  
                     </RouterLink>
@@ -50,25 +50,38 @@
 </script>
 
 <style>
-    ol {
-        /* border-right: 1px solid #9966CC; */
+    .condtainer__side-bar {
         width: 100%;
-        height: 100vh;
-        display: grid;
-        grid-template-rows: repeat(7, 1fr);
-        padding: 30px;
+        height: 100%;
+        padding: 20px;
+        font-size: 1.5rem;
     }
+
+    ol {
+        display: grid;
+        grid-template-rows: repeat(7, 90px);
+        
+    }
+
     ol > li {
         list-style: none;
+       
     }
+
+    li > img {
+        width: 150px;
+        padding: 10px 0;
+    }
+    
     a {
         color: #000;
-        /* display: grid; */
-        /* grid-template-columns: 50px 150px; */
         display: flex;
         flex-direction: row;
-        gap: 10px;
-        
+        gap: 10px;  
+    }
+
+    a > img {
+        padding: 0 10px;
     }
 
 </style>

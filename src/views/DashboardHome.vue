@@ -1,7 +1,7 @@
 <template>
     <section class="dasboard">
         <div class="dashboard__todolist">
-            <Todolist />
+            <Todolist />    
         </div>
 
         <div class="dashboard__slideshow">
@@ -9,15 +9,15 @@
         </div>
 
         <div class="dashboard__sort-table">
-            <SortTableContent />    
+            <SortTableContent />        
         </div>
 
         <div class="dashboard__quiz-app">
-            <QuizApp />
+            <QuizApp />    
         </div>
 
         <div class="dashboard__contact-form">
-            <ContactForm />
+            <ContactForm />    
         </div>
         </section>
 </template>
@@ -41,26 +41,33 @@
 <style>
     .dasboard {
         width: 100%;
-        height: 100vh;
+        height: 100%;
         background: #F4F6FB;
         border: 1px solid #eee;
         box-shadow: 2px lightgray;
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: 1fr 1fr;
+        grid-template-columns: repeat(3, 32.5%);
+        grid-template-rows: repeat(2, 450px);
         gap: 10px;
+        padding: 10px; 
     }
 
     .dashboard__todolist {
-        grid-row: 1/3;
+        grid-row: 1 / 3;
+        font-size: 20px;
+    } 
+
+    .dashboard__slideshow {
+        position: relative;
     }
 
-    .dasboard > * {
+    .dasboard > div {
+        position: relative;
         width: 100%;
+        height: 100%;
         background: #fff;
-        margin: 20px;
         border: 1px solid #eee;
-        border-radius: 10px;
-        overflow: scroll;
+        border-radius: 15px; 
+        box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, .1);
     }
 </style>

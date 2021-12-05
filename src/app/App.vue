@@ -2,8 +2,8 @@
     <section class="dashboard-section">
         <aside>
             <Sidebar />
-        </aside>
-        <main class="dashboard-section__main">
+        </aside> 
+        <main class="dashboard-section__main"> 
             <RouterView />
         </main> 
     </section> 

@@ -3,7 +3,7 @@
             <header class="sortTable__header">
                 <h1>Recent Transaction</h1>
                 <div>
-                    <div class="sortTable__header__date">
+                    <div class="sortTable__header-date">
                         <h3 @click="sortBy('transactiondate')">Date</h3>  
                         <svg @click="toggleSortOrder" width="21" height="36" viewBox="0 0 21 36" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M9.31501 32.3076C9.39146 32.4186 9.49375 32.5094 9.61308 32.5721C9.73241 32.6348 9.8652 32.6676 10 32.6676C10.1348 32.6676 10.2676 32.6348 10.3869 32.5721C10.5063 32.5094 10.6086 32.4186 10.685 32.3076L18.185 21.4742C18.2718 21.3493 18.3227 21.2029 18.3322 21.0511C18.3417 20.8992 18.3094 20.7477 18.2387 20.6129C18.1681 20.4781 18.0619 20.3653 17.9317 20.2866C17.8015 20.208 17.6522 20.1665 17.5 20.1667H2.50001C2.34821 20.1674 2.19946 20.2094 2.06974 20.2882C1.94003 20.3671 1.83426 20.4798 1.76382 20.6142C1.69337 20.7487 1.66091 20.8998 1.66993 21.0514C1.67895 21.2029 1.72911 21.3491 1.81501 21.4742L9.31501 32.3076Z" fill="black"/>
@@ -11,11 +11,11 @@
                         </svg>
                     </div>
 
-                    <div class="sortTable__header__description">
+                    <div class="sortTable__header-description">
                         <h3>Description</h3>  
                     </div>
 
-                    <div class="sortTable__header__transaction">
+                    <div class="sortTable__header-transaction">
                         <h3 @click="sortBy('transaction')">Transaction</h3>  
                         <svg @click="toggleSortOrder" width="21" height="36" viewBox="0 0 21 36" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M9.31501 32.3075C9.39146 32.4185 9.49375 32.5093 9.61308 32.572C9.73241 32.6347 9.8652 32.6675 10 32.6675C10.1348 32.6675 10.2676 32.6347 10.3869 32.572C10.5063 32.5093 10.6086 32.4185 10.685 32.3075L18.185 21.4741C18.2718 21.3492 18.3227 21.2028 18.3322 21.051C18.3417 20.8991 18.3094 20.7476 18.2387 20.6128C18.1681 20.478 18.0619 20.3652 17.9317 20.2865C17.8015 20.2078 17.6522 20.1664 17.5 20.1666H2.50001C2.34821 20.1673 2.19946 20.2092 2.06974 20.2881C1.94003 20.3669 1.83426 20.4797 1.76382 20.6141C1.69337 20.7486 1.66091 20.8997 1.66993 21.0512C1.67895 21.2028 1.72911 21.349 1.81501 21.4741L9.31501 32.3075Z" fill="#013E40"/>
@@ -93,42 +93,39 @@
 
 <style>
     .sortTable {
-        /* margin: 50px auto; */
-        /* max-width: 60vw; */
-        /* max-height: 100vh; */
-        /* overflow-y: scroll ; */
-        width: 100%;
-        height: 100%;
-        font-size: 20px;
+        font-size: .85rem;
         display: flex;
         flex-direction: column;
-        
+        padding: .5rem;
     }
+
     .sortTable__header {
-        padding: 20px;
+        padding: .5rem 0;
     }
+
     .sortTable__header > h1 {
-        padding: 10px 0;
+        padding: .5rem;
     }
+
     .sortTable__header > div {
-        width: 100%;
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
-        gap: 5px;
-    }
-    .sortTable__header__date, 
-    .sortTable__header__transaction {
+        gap: .5rem;
+    }   
+       
+    .sortTable__header-date, 
+    .sortTable__header-transaction,
+    .sortTable__header-description {
         display: flex;
         flex-direction: row;
-        /* gap: 10px; */
+        gap: .5rem;
+        padding: .5rem;
         cursor: pointer;
-    } 
-    .sortTable__main {
-        width: 100%;
-        height: 100%;
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        padding: 20px;
-        gap: 5px;
+        align-items: center;
+    }
+
+    .sortTable__header-date > svg, 
+    .sortTable__header-transaction > svg {
+        width: .85rem;
     }
 </style>

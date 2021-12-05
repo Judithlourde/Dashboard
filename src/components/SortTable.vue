@@ -15,3 +15,12 @@ export default {
     },    
 }
 </script>
+
+<style>
+    .sortTable__main {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        padding: .5rem;
+        gap: .5rem;
+    }
+</style>
