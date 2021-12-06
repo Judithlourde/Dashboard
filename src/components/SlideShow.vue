@@ -35,10 +35,10 @@
 				index: 0,
 				showCaption: false,
 				slides: [
-					{ title: 'House', caption: 'House', file: '/src/assets/images/housingloan.jpg' },
-					{ title: 'Boat', caption: 'Boat', file: '/src/assets/images/boatloan.jpg' },
-					{ title: 'Car', caption: 'Car', file: '/src/assets/images/carloan.jpg' },
-					{ title: 'Vacation house', caption: 'Vacation house', file: '/src/assets/images/vacation.jpg' },
+					{ title: 'House', caption: 'House', file: '/images/housingloan.jpg' },
+					{ title: 'Boat', caption: 'Boat', file: '/images/boatloan.jpg' },
+					{ title: 'Car', caption: 'Car', file: '/images/carloan.jpg' },
+					{ title: 'Vacation house', caption: 'Vacation house', file: '/images/vacation.jpg' },
 				],
 			};
 		},

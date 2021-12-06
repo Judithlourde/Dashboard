@@ -1,6 +1,6 @@
-import image1 from "../assets/images/blue.jpg"
-import image2 from "../assets/images/red.jpg"
-import image3 from "../assets/images/caesar.jpg"
+import image1 from "/images/blue.jpg"
+import image2 from "/images/red.jpg"
+import image3 from "/images/caesar.jpg"
 
 export default {
     state() {

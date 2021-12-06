@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "vite"
+    "test": "vite",
+    "build": "vite build",
+    "preview": "vite preview --host"
+    
   },
   "author": "",
   "license": "ISC",
