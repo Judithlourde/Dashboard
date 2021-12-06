@@ -74,16 +74,13 @@ export default {
 
 <style>
     .contact-container {
-      
         font-size: .85rem;
-        /* width: 100%;
-        max-width: 100%;
-        height: 100%; */
-        display: flex;
-        flex-direction: column;
-        /* padding-top: 1em; */
+        top: 0;
+
+        
     }
     .form {
+        
         border: none;
         padding: .5em;
         /* background: #fcfcfc; */
@@ -103,6 +100,11 @@ export default {
         align-items: flex-start;
         padding: .15em;
     }
+
+    .form__element {
+        padding: 10px;
+    }
+
     .form__element input,
     .form__element label {
         font-size: 1em;
@@ -135,7 +137,9 @@ export default {
     .form__element select {
         padding: 0.5em;
         border-radius: 5px;
-        border: 1px dotted rgb(27, 26, 26); 
+        background: #F7F7F8;
+        border: none;
+        /* border: 1px dotted rgb(27, 26, 26);  */
         /* margin-bottom: 1em; */
     }
 
