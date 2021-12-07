@@ -23,6 +23,8 @@
                         </svg>
                     </div>
                 </div>
+                
+                <hr>
             </header>
 
             <SortTable
@@ -100,18 +102,12 @@
         padding-right: 5%;
         padding-left: 5%;  
         padding-top: 10vh;
-        font-size: 1.5rem;
-        display: flex;
-        flex-direction: column;
-        /* padding: .5rem; */
-    }
-
-    .sortTable-view__header {
-        padding: .5rem 0;
+        font-size: 1.25rem;
+        
     }
 
     .sortTable-view__header > h1 {
-        padding: .5rem;
+        padding: 1rem .5rem;
     }
 
     .sortTable-view__header > div {

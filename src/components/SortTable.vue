@@ -2,7 +2,7 @@
         <main class="sortTable__main">
                 <div> {{ transactiondate }} </div>
                 <div> {{ description }} </div>
-                <div> {{ transaction }} </div>
+                <div> - {{ transaction }} </div>
         </main>    
 </template>
 

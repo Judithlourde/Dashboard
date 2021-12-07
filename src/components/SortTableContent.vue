@@ -23,6 +23,8 @@
                         </svg>
                     </div>
                 </div>
+
+                <hr>
             </header>
 
             <SortTable
