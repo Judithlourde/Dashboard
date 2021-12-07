@@ -40,8 +40,6 @@
 </script>
 <style>
     .dasboard {
-        width: 100%;
-        height: 100%;
         background: #F4F6FB;
         border: 1px solid #eee;
         box-shadow: 2px lightgray;
