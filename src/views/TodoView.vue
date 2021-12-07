@@ -118,10 +118,10 @@ export default {
 
 <style>
     .todo-view {
-        height: 100vh;
+        height: 80%; 
         border-radius: 15px; 
         box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, .1); 
-        min-width: calc(200px + 14%);
+        max-width: calc(200px + 14%);
         max-width: calc(786px + 14%);
         background: #fff;
         margin: 10vh;
@@ -143,7 +143,6 @@ export default {
         align-items: center;
         font-size: 1rem;
     }
-
 
     .todo__enterItems > input {
         border: 1px solid #eee;
