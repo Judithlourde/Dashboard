@@ -16,5 +16,14 @@ export default {
 </script>
 
 <style>
+.form__element--categories {
+    font-family: inherit;
+    padding: .5rem;
+    margin: .5rem 0;
+    font-size: inherit;
+    font-family: inherit;
+    background: #F7F7F8;
+    border: none;
+    }
 
 </style>

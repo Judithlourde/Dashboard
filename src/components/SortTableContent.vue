@@ -86,17 +86,19 @@
                 toggleSortOrder() {
                     this.sort.order = this.sort.order === 'asc' ? 'desc' : 'asc';
                     this.$router.push({ query: { ...this.$route.query, order: this.sort.order } })
-                },
+                }   
             },
     };
 </script>
 
 <style>
     .sortTable {
+        /* min-width: calc(1000px + 14%); */
         font-size: .85rem;
         display: flex;
         flex-direction: column;
         padding: .5rem;
+        /* font-size: calc(10px + (24 - 16)*(100vw - 1200px)/(1200 - 400)); */
     }
 
     .sortTable__header {

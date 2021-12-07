@@ -75,23 +75,12 @@ export default {
 <style>
     .contact-container {
         font-size: .85rem;
-        top: 0;
-
-        
     }
     .form {
-        
         border: none;
         padding: .5em;
-        /* background: #fcfcfc; */
-        /* border: 1px solid gray; */
-        /* border-radius: 0.5em;
-        box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, .1); */
+    }
 
-    }
-    .form__header {
-        /* margin: 0.5em; */
-    }
     .form__element {
         display: flex;
         flex-flow: row wrap;
@@ -114,18 +103,13 @@ export default {
         display: block;
     }
     .form__element--categories {
-
-        /* font-size: 1.5rem; */
         border: 1px solid black;
+    }
 
-        /* border: 1px solid black; */
-    }
-    .form__element--message input {
-        /* width: 90%; */
-    }
     .form__element textarea {
         font-size: 1.5em;
         text-align: left;
+        width: 90%;
     }
     .form__element label{
         /* text-align: left; */
@@ -141,11 +125,5 @@ export default {
         border: none;
         /* border: 1px dotted rgb(27, 26, 26);  */
         /* margin-bottom: 1em; */
-    }
-
-    @media screen and (max-width: 465px) {
-        /* .form__element {
-            display: block;
-        } */
     }
 </style>

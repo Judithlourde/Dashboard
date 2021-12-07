@@ -9,15 +9,20 @@ button {
     cursor: pointer;
 }
 .dashboard-section {
-    /* position: relative; */
-    width: 100vw;
-    height: 100vh;
     display: grid;
     grid-template-columns: 250px auto;
+    max-width: calc(1400px + 14%);
+    margin-right: auto;
+    margin-left: auto;
 }
+
 .dashboard-section__main {
     position: relative;
-   
+    background: #F5F5F5;
+    width: 100%;
     
+      
 }
+
+
 

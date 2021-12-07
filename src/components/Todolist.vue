@@ -118,16 +118,10 @@ export default {
 
 <style>
     .todo {
-        position: absolute;
-        top: 0;
-        left: 0;
-        /* margin: 50px auto; */
-        width: 100%;
-        height: 100%;
-        /* border-radius: 15px; 
-        box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, .1); */
+        max-height: 80vh;
     }
-.todo__header > h1 {
+    
+    .todo__header > h1 {
         padding: 20px;
         /* font-size: 1rem; */
         font-weight: 300;

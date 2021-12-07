@@ -1,30 +1,24 @@
 <template>
 	<section class="slideshow">
-		<div class="slideshow__buttons">
-			<button @click="previousImage" class="slideshow__button">
-				<svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
-					<path d="M27.814 9.41882L9.33424 20.8521L27.5182 32.7503L27.814 9.41882Z" fill="black"/>
-				</svg>
-			</button>
+		<button @click="previousImage" class="slideshow__button">
+			<svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path d="M27.814 9.41882L9.33424 20.8521L27.5182 32.7503L27.814 9.41882Z" fill="black"/>
+			</svg>
+		</button>
 
-			<div class="slideshow__slides">
-				<figure class="slideshow__slide">
-					<img class="slideshow__img" :src="currentSlide.file" :alt="currentSlide.title">
-					<figcaption v-if="showCaption" class="slideshow__caption">{{ currentSlide.caption }}</figcaption>
-				</figure>
-			</div>
-			
-
-			<button @click="nextImage" class="slideshow__button">
-				<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-					<path d="M13.3333 31.6667L31.6667 20L13.3333 8.33333V31.6667Z" fill="black"/>
-				</svg>
-			</button>
+		<div class="slideshow__slides">
+			<figure class="slideshow__slide">
+				<img class="slideshow__img" :src="currentSlide.file" :alt="currentSlide.title">
+				<figcaption v-if="showCaption" class="slideshow__caption">{{ currentSlide.caption }}</figcaption>
+			</figure>
 		</div>
-
 		
 
-		
+		<button @click="nextImage" class="slideshow__button">
+			<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path d="M13.3333 31.6667L31.6667 20L13.3333 8.33333V31.6667Z" fill="black"/>
+			</svg>
+		</button>
 	</section>
 </template>
 
@@ -67,56 +61,6 @@
 
 <style>
 	.slideshow {
-		
-	}
-	
-	.slideshow:hover .slideshow__caption {
-		opacity: 1;
-	}
-
-	.slideshow__slides {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		/* position: absolute; */
-		/* top: 0;
-		left: 0;
-		bottom: 0;
-		right: 0;
-		width: 100%;
-		height: 100%; */
-	}
-
-	.slideshow__slide {
-		width: 100%;
-		height: 100%;
-	}
-
-	.slideshow__img {
-		padding: 0;
-		width: 100%;
-		height: 100%;
-		object-fit: contain;
-	}
-
-	.slideshow__caption {
-		/* position: absolute; */
-		left: 0;
-		bottom: 0;
-		width: 100%;
-		text-align: center;
-		font-size: 0.75em;
-		/* padding: 0.5em; */
-	}
-
-	.slideshow__button-caption {
-		padding: 0.5em;
-	}
-
-	.slideshow__buttons {
-		position: absolute;
-		top: 0;
-		left: 0;
 		width: 100%;
 		height: 100%;
 		z-index: 10;
@@ -127,9 +71,43 @@
 
 	.slideshow__button {
 		border: 0;
-		/* padding: 0.5rem; */
 		text-transform: uppercase;
 		background: none;
-		align-self: center;
+	}
+
+	.slideshow:hover .slideshow__caption {
+		opacity: 1;
+	}
+
+	.slideshow__slides {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.slideshow__slide {
+		width: 100%;
+		height: 100%;
+	}
+
+	.slideshow__img {
+		padding: 0;
+		width: 100%;
+		max-height: 60vh;
+		object-fit: contain;
+	}
+
+	.slideshow__caption {
+		/* position: absolute; */
+		/* left: 0;
+		bottom: 0;
+		width: 100%;
+		text-align: center;
+		font-size: 0.75em; */
+		/* padding: 0.5em; */
+	}
+
+	.slideshow__button-caption {
+		padding: 0.5em;
 	}	
 </style>

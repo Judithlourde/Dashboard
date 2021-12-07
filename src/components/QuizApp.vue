@@ -1,10 +1,10 @@
 <template>
-  <div class="quiz">
-      <div class="quiz__container">
+    <div class="quiz">
         <!-- Insert this unless quiz has no more questions -->
         <div v-if="quizId < quizData.length">
             <div class="quiz__name">
                 <h1>{{ quizName }}</h1>
+
                 <p>Question {{quizId + 1}}</p>
             </div>
 
@@ -14,6 +14,7 @@
 
             <div class="quiz__image">
                 <img :src="quizData[quizId].image" :alt="quizData[quizId].alt">
+
                 <p class="quiz__image--text">{{ quizData[quizId].alt }}</p>
             </div>
 
@@ -56,11 +57,10 @@
             </div>
 
             <div>
-                <button class="quiz__buttons" @click="resetGame">Try again</button>
+                <button class="quiz__buttons-reset" @click="resetGame">Try again</button>
             </div>
         </div>
-      </div>
-  </div>
+    </div>
 </template>
 
 <script>
@@ -105,34 +105,23 @@ export default {
 
 <style>
     .quiz {
-        padding: 0.5em;
-        height: 100%;
-        width: 100%;
+        min-width: calc(200px + 1%);
+        padding-top: 2vh; 
+        font-size: .75rem;
+        padding-bottom: 40px;
         display: flex;
         justify-content: center;
         align-items: center;
-        font-size: .7rem;
         text-align: center;
     }
 
-    .quiz__container {
-        /* max-width: 1600px; */
-    }
-
-    .quiz__name  h1 {
-        /* font-size: .75em; */
-    }
-
-    .quiz__header h2 {
-        /* font-size: .75em; */
-    }
-
     .quiz__header {
+        
         margin: .5rem;
     }
 
     .quiz__image > img {
-        max-width: 8rem;
+        width: 100%;
     }
 
     .quiz__image--text {
@@ -143,11 +132,10 @@ export default {
     .quiz__buttons,
     .quiz__buttons--answer {
         text-align: center;
-        width: 75%;
+        width: 65%;
         min-width: fit-content;
-        max-width: 400px;
         font-size: 1rem;
-        padding: 0.3em;
+        padding: 0.2em;
         margin: 0.5em 0;
         background: white;
         border: 1px solid black;
