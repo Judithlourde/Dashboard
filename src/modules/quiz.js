@@ -22,6 +22,7 @@ export default {
                 answer: 3,
             
                 },
+
                 {
                 id: 2,
                 question: "The sun is also pretty big. How many nickles could you fit across it?",
@@ -35,6 +36,7 @@ export default {
                     ],
                 answer: 3,
                 },
+
                 {
                 id: 3,
                 question: "Where are caesar-salads most expensive?",
@@ -49,6 +51,7 @@ export default {
                     ],
                 answer: 4,
                 },
+
                 {
                 id: 4,
                 question: "tralalala?",
@@ -67,10 +70,12 @@ export default {
             // score: 0,
         }
     },
+
     getters: {
         getQuizName(state) {
             return state.quizName
         },
+        
         getQuizData(state) {
             return state.quizData
         }

@@ -119,11 +119,12 @@ export default {
 <style>
     .todo {
         max-height: 80vh;
+        text-decoration: underline;
+        color: indianred;
     }
     
     .todo__header > h1 {
         padding: 20px;
-        /* font-size: 1rem; */
         font-weight: 300;
     }
 

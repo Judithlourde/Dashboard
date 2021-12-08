@@ -8,6 +8,7 @@
                         <label for="firstname">FIRST NAME</label> <br>
                         <input name="firstname" v-model="firstName" type="text" placeholder="Enter your First Name">
                     </div>
+                    
                     <div>
                         <label for="firstname">LAST NAME</label> <br>
                         <input name="lastname" type="text" v-model="lastName" placeholder="Enter Your Last Name">

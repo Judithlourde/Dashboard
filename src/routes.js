@@ -1,17 +1,17 @@
 // Import View(Pages) Linkes to the routes.js file
 import DashboardHome from './views/DashboardHome.vue';
-import SlideShowView from './views/SlideShowView.vue';
-import QuizAppView from './views/QuizAppView.vue';
-import TodoView from './views/TodoView.vue';
-import SortTableView from './views/SortTableView.vue';
-import ContactFormView from './views/ContactFormView.vue';
+import SlideShow from './components/SlideShow.vue';
+import QuizApp from './components/QuizApp.vue';
+import Todolist from './components/Todolist.vue';
+import SortTableContent from './components/SortTableContent.vue';
+import ContactForm from './components/ContactForm.vue';
 
 // Export the View-Page routes => this will be shown in the URL
 export default [
-    { name: 'contact', path: '/contact-form', component: ContactFormView },
-    { name: 'transaction', path: '/transaction', component: SortTableView },
-    { name: 'todolist', path: '/todolist', component: TodoView },
-    { name: 'quiz', path: '/quiz', component: QuizAppView },
-    { name: 'loans', path: '/loans', component: SlideShowView },
+    { name: 'contact', path: '/contact-form', component: ContactForm },
+    { name: 'transaction', path: '/transaction', component: SortTableContent },
+    { name: 'todolist', path: '/todolist', component: Todolist },
+    { name: 'quiz', path: '/quiz', component: QuizApp },
+    { name: 'loans', path: '/loans', component: SlideShow },
     { name: 'dashboard', path: '/', component: DashboardHome },
 ]

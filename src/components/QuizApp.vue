@@ -72,6 +72,7 @@ export default {
             score: 0
         }
     },
+
     methods: {
         nextQuestion() {
             if (this.selected === null) {
@@ -84,18 +85,22 @@ export default {
             this.quizId++;
             this.selected = null;
         },
+        
         selectAlternative(index) {
             this.selected = index;
         },
+
         resetGame() {
             this.quizId = 0,
             this.score = 0
         }
     },
+
     computed: {
         quizName() {
             return this.$store.getters.getQuizName
         },
+
         quizData() {
             return this.$store.getters.getQuizData
         },

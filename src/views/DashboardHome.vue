@@ -1,25 +1,25 @@
 <template>
-    <section class="dasboard">
-        <div class="dashboard__todolist">
+    <section class="dashboard">
+        <div class="dashboard__component dashboard__todolist">
             <Todolist />    
         </div>
 
-        <div class="dashboard__slideshow">
+        <div class="dashboard__component dashboard__slideshow">
             <SlideShow />
         </div>
 
-        <div class="dashboard__sort-table">
+        <div class="dashboard__component dashboard__sort-table">
             <SortTableContent />        
         </div>
 
-        <div class="dashboard__quiz-app">
+        <div class="dashboard__component dashboard__quiz-app">
             <QuizApp />    
         </div>
 
-        <div class="dashboard__contact-form">
+        <div class="dashboard__component dashboard__contact-form">
             <ContactForm />    
         </div>
-        </section>
+    </section>
 </template>
 <script>
     import Todolist from '../components/Todolist.vue';
@@ -39,7 +39,7 @@
     }
 </script>
 <style>
-    .dasboard {
+    .dashboard {
         background: #F4F6FB;
         border: 1px solid #eee;
         box-shadow: 2px lightgray;
@@ -52,18 +52,18 @@
 
     .dashboard__todolist {
         grid-row: 1 / 3;
-        font-size: 20px;
+        font-family: cursive;
     } 
 
     .dashboard__slideshow {
         position: relative;
     }
 
-    .dasboard > div {
+    .dashboard__component {
+        font-size: 50px;
         position: relative;
         width: 100%;
         height: 100%;
-        background: #fff;
         border: 1px solid #eee;
         border-radius: 15px; 
         box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, .1);
