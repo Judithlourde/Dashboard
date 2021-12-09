@@ -1,5 +1,5 @@
 <template>
-    <section class="todo">
+    <section class="todo" :class="{todoView: todoView}">
         <header class="todo__header">
             <h1>To Do List</h1> 
         </header>
@@ -58,6 +58,7 @@
 export default {
     data() {
         return {
+            todoView: false,
             todoEntered: '',
             edit: false,
             todoItems: [],
@@ -113,14 +114,18 @@ export default {
                 this.count++
         },    
     },
+
+    computed: {
+        stylingTodoView() {
+            return this.todoView
+        }
+    }
 }
 </script>
 
 <style>
     .todo {
-        max-height: 80vh;
-        text-decoration: underline;
-        color: indianred;
+        max-height: 80vh; 
     }
     
     .todo__header > h1 {
@@ -179,5 +184,18 @@ export default {
         font-size: inherit;
         font-family: inherit;
         width: 100%;
+    }
+
+    .todoView {
+        height: 90%; 
+        border-radius: 15px; 
+        box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, .1); 
+        background: #fff;
+        margin: 5vh;
+        padding-right: 2%;
+        padding-left: 2%;  
+        padding-top: 1%;  
+        font-size: 1.25rem;
+        
     }
 </style>

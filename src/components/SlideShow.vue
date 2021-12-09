@@ -1,5 +1,5 @@
 <template>
-	<section class="slideshow">
+	<section class="slideshow" :class="{slideShowView:slideShowView}">
 		<button @click="previousImage" class="slideshow__button">
 			<svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
 				<path d="M27.814 9.41882L9.33424 20.8521L27.5182 32.7503L27.814 9.41882Z" fill="black"/>
@@ -26,6 +26,7 @@
 	export default {
 		data() {
 			return {
+				slideShowView: false,
 				index: 0,
 				showCaption: false,
 				slides: [
@@ -40,6 +41,9 @@
 		computed: {
 			currentSlide() {
 				return this.slides[this.index];
+			},
+			stylingslideShowView() {
+				return this.slideShowView
 			}
 		},
 
@@ -109,5 +113,21 @@
 
 	.slideshow__button-caption {
 		padding: 0.5em;
-	}	
+	}
+	
+	/* styling slideshow view */
+	.slideShowView {
+		z-index: 10;
+        max-width: calc(486px + 14%);
+        max-width: calc(786px + 14%);
+        margin-right: auto;
+        margin-left: auto;
+        padding-right: 5%;
+        padding-left: 5%;  
+        padding-top: 10vh; 
+        font-size: 1rem; 
+		border-radius: 15px; 
+        box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, .1); 
+        background: #fff;
+	}
 </style>

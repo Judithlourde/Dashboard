@@ -1,5 +1,5 @@
 <template>
-    <div class="quiz">
+    <div class="quiz" :class="{quizAppView:quizAppView}">
         <!-- Insert this unless quiz has no more questions -->
         <div v-if="quizId < quizData.length">
             <div class="quiz__name">
@@ -67,6 +67,7 @@
 export default {
     data() {
         return {
+            quizAppView: false,
             quizId: 0,
             selected: null,
             score: 0
@@ -104,6 +105,9 @@ export default {
         quizData() {
             return this.$store.getters.getQuizData
         },
+        stylingQuizAppView() {
+            return this.quizAppView
+        }
     },
 }
 </script>
@@ -177,6 +181,21 @@ export default {
 
     .quiz__header {
         color:green;
+    }
+
+    /* styling quizapp view */
+    .quizAppView {
+        margin-top: 5vh;
+        padding: 3%;
+        margin-right: auto;
+        margin-left: auto;
+        background: #fff;
+        font-size: 1.25rem;
+        text-align: center;
+        max-width: calc(486px + 14%);
+        max-width: calc(786px + 14%);
+        border-radius: 0.5em;
+        box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, .1);
     }
 }
 </style>

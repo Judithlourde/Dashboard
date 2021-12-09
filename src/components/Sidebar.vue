@@ -13,7 +13,7 @@
                 </li>
                 
                 <li class="side-bar__list-links">
-                    <RouterLink :to="{ name: 'todolist'}">
+                    <RouterLink :to="{ name: 'todolist' }">
                         <img src="../assets/svg/todo.svg" alt="to-do-logo">
                         <p>To Do List</p>  
                     </RouterLink>
@@ -83,10 +83,12 @@
         flex-direction: row;
         gap: 1vh;  
     }
+
     .side-bar__list-links > a > img {
         padding: 0 10px;
       
     }
+
     .router-link-active > p {
         color: #fff;
     }

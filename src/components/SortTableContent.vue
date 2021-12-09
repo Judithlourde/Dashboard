@@ -1,5 +1,5 @@
 <template>
-        <section class="sortTable">
+        <section class="sortTable" :class="{sortTableView: sortTableView}">
             <header class="sortTable__header">
                 <h1>Recent Transaction</h1>
                 
@@ -50,6 +50,7 @@
 
         data() {
                 return {
+                    sortTableView: false,
                     sort: {
                         key: 'transactiondate',
                         order: 'asc',
@@ -84,6 +85,9 @@
 
                 return this.transactions.sort((a, b) => compareFunction(a, b) * orderValue);
             },
+            stylingSortTableView() {
+                return this.sortTableView
+            }
         },
 
         methods: {
@@ -136,5 +140,18 @@
     .sortTable__header-date > svg, 
     .sortTable__header-transaction > svg {
         width: .85rem;
+    }
+
+    /* styling for view */
+    .sortTableView {
+        height: 80%; 
+        border-radius: 15px; 
+        box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, .1); 
+        background: #fff;
+        margin: 10vh;
+        padding-right: 2%;
+        padding-left: 2%;  
+        padding-top: 5vh; 
+        font-size: 1.25rem;
     }
 </style>

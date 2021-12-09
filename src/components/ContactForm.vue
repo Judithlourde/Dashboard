@@ -1,9 +1,10 @@
 <template>
-    <div class="contact-container">
+    <div class="form-container">
         <form>
             <fieldset class="form">
-             <h1 class="form__header">Contact Form</h1>
-                <div class="form__element">
+                <h1 class="form__header">Contact Form</h1>
+
+                <div class="form__element" :class="{contactFormView:contactFormView}">
                     <div>
                         <label for="firstname">FIRST NAME</label> <br>
                         <input name="firstname" v-model="firstName" type="text" placeholder="Enter your First Name">
@@ -63,6 +64,7 @@ export default {
     },
     data() {
         return {
+        contactFormView: false,
         firstName:'',
         lastName: '',
         email:'',
@@ -74,7 +76,7 @@ export default {
 </script>
 
 <style>
-    .contact-container {
+    .form-container {
         font-size: .85rem;
     }
     .form {
@@ -127,4 +129,26 @@ export default {
         /* border: 1px dotted rgb(27, 26, 26);  */
         /* margin-bottom: 1em; */
     }
+
+    /* styling contact-form view */
+    .contactFormView {
+        max-width: calc(486px + 14%);
+        max-width: calc(786px + 14%);
+        margin-right: auto;
+        margin-left: auto;
+        padding-right: 5%;
+        padding-left: 5%;  
+        padding-top: 10vh; 
+        font-size: 1.25rem;
+        border: none;
+        padding: 1.5rem;
+        background: #fcfcfc; 
+        border-radius: 0.5em;
+        box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, .1);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+
 </style>
