@@ -1,9 +1,7 @@
 <template>
-	<section class="slideshow" :class="{slideShowView:slideShowView}">
+	<div class="slideshow" :class="{slideShowView:slideShowView}">
 		<button @click="previousImage" class="slideshow__button">
-			<svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
-				<path d="M27.814 9.41882L9.33424 20.8521L27.5182 32.7503L27.814 9.41882Z" fill="black"/>
-			</svg>
+			<img src="/svg/left_arrow.svg" alt="left-arrow">	
 		</button>
 
 		<div class="slideshow__slides">
@@ -15,11 +13,9 @@
 		
 
 		<button @click="nextImage" class="slideshow__button">
-			<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-				<path d="M13.3333 31.6667L31.6667 20L13.3333 8.33333V31.6667Z" fill="black"/>
-			</svg>
+			<img src="/svg/right_arrow.svg" alt="right-arrow">
 		</button>
-	</section>
+	</div>
 </template>
 
 <script>
@@ -28,12 +24,12 @@
 			return {
 				slideShowView: false,
 				index: 0,
-				showCaption: false,
+				showCaption: true,
 				slides: [
-					{ title: 'House', caption: 'House', file: '/images/housingloan.jpg' },
-					{ title: 'Boat', caption: 'Boat', file: '/images/boatloan.jpg' },
-					{ title: 'Car', caption: 'Car', file: '/images/carloan.jpg' },
-					{ title: 'Vacation house', caption: 'Vacation house', file: '/images/vacation.jpg' },
+					{ title: 'House', caption: 'Housing Loan', file: '/images/housingloan.jpg' },
+					{ title: 'Boat', caption: 'Boat Loan', file: '/images/boatloan.jpg' },
+					{ title: 'Car', caption: 'Car Loan', file: '/images/carloan.jpg' },
+					{ title: 'Vacation house', caption: 'Vacation house Loan', file: '/images/vacation.jpg' },
 				],
 			};
 		},
@@ -42,6 +38,7 @@
 			currentSlide() {
 				return this.slides[this.index];
 			},
+
 			stylingslideShowView() {
 				return this.slideShowView
 			}
@@ -65,12 +62,11 @@
 
 <style>
 	.slideshow {
-		width: 100%;
 		height: 100%;
-		z-index: 10;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
+		gap: 20px;
 	}
 
 	.slideshow__button {
@@ -79,7 +75,7 @@
 		background: none;
 	}
 
-	.slideshow:hover .slideshow__caption {
+	.slideshow:hover {
 		opacity: 1;
 	}
 
@@ -102,32 +98,39 @@
 	}
 
 	.slideshow__caption {
-		/* position: absolute; */
-		/* left: 0;
-		bottom: 0;
 		width: 100%;
 		text-align: center;
-		font-size: 0.75em; */
-		/* padding: 0.5em; */
+		font-size: 0.85em;
+		padding: 0.5em;
+		color: #6429D5;
 	}
 
 	.slideshow__button-caption {
 		padding: 0.5em;
 	}
 	
-	/* styling slideshow view */
-	.slideShowView {
-		z-index: 10;
-        max-width: calc(486px + 14%);
-        max-width: calc(786px + 14%);
-        margin-right: auto;
-        margin-left: auto;
-        padding-right: 5%;
-        padding-left: 5%;  
-        padding-top: 10vh; 
-        font-size: 1rem; 
-		border-radius: 15px; 
-        box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, .1); 
-        background: #fff;
+	/* styling slideshow in view */
+	/* small devices (mobiles, 768px and down) */
+    @media screen and (max-width: 768px) {
+		.slideShowView { 
+			font-size: 1rem; 
+		}
+	}
+
+	/* Medium devices (landscape tablets, 768px and up) */
+    @media screen and (min-width: 768px) {
+		.slideShowView {
+			position: absolute;
+			z-index: 10;
+			max-width: calc(786px + 14%); 
+			padding-right: 5%;
+			padding-left: 5%;   
+			font-size: 1rem; 
+			width: 100%;
+			height: 100%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
 	}
 </style>
