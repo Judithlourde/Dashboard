@@ -1,9 +1,10 @@
 <template>
-    <section class="dashboard-section">
-        <aside>
+    <section class="home">
+        <aside class="home__sidebar">
             <Sidebar />
         </aside> 
-        <main class="dashboard-section__main"> 
+        
+        <main class="home__main"> 
             <RouterView />
         </main> 
     </section> 
