@@ -1,31 +1,34 @@
-body {
-    font-size: 1em;
-    font-family: 'Ubuntu', sans-serif;
+/* small devices (mobiles, 768px and down) */
+@media screen and (max-width: 768px) {
+    .home {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100vw;
+        height: 100vh;
+    }
+
+    .home__sidebar {
+        width: 100vw;
+    }
+
+    .home__main {
+        width: 100%;
+        height: 100%;
+        padding: 10px;
+    }
 }
 
-a {
-    text-decoration: none;
+/* Medium devices (landscape tablets, 768px and up) */
+@media screen and (min-width: 768px) {
+    .home {
+        display: grid;
+        grid-template-columns: 250px 1fr;
+        grid-template-rows: 1fr;
+        max-width: calc(1400px + 14%);
+        margin-right: auto;
+        margin-left: auto;
+        width: 100vw;
+        height: 100vh;
+    }
 }
-
-button {
-    cursor: pointer;
-}
-
-.dashboard-section {
-    display: grid;
-    grid-template-columns: 250px auto;
-    max-width: calc(1400px + 14%);
-    margin-right: auto;
-    margin-left: auto;
-}
-
-.dashboard-section__main {
-    position: relative;
-    background: #F5F5F5;
-    width: 100%;
-    
-      
-}
-
-
-
