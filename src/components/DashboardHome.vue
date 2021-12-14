@@ -39,44 +39,52 @@
         },
     }
 </script>
+
 <style>
     .dashboard {
-        border: 1px solid #eee;
-        box-shadow: 2px lightgray;
-        display: grid;
-        grid-template-columns: repeat(3, 32.5%);
-        gap: 10px;
-        padding: 10px; 
-    }
-
-    .dashboard__todolist {
-        grid-row: 1 / 3;
-    } 
-
-    .dashboard__slideshow {
-        position: relative;
+       background: #F7F7F8; 
+       border-radius: 15px;
     }
 
     .dashboard__component {
-        position: relative;
         width: 100%;
         height: 100%;
         border: 1px solid #eee;
         border-radius: 15px;
         background: #fff;
-        /* box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, .1);  */
+        margin: 3% 0;
+        border-radius: 0.5em;
+        box-shadow: 1px 1px 1px 1px #eee;
+    }
+    
+    /* small devices (mobiles, 768px and down) */
+    @media screen and (max-width: 768px) {
+         .dashboard {
+            margin: 2%;
+            padding: 2%;
+        }
+
+        .dashboard__component {
+            padding: 20px 0;
+        }
+
+        .dashboard__contact-form {
+            margin-bottom: 80px;
+        }
     }
 
-    .dashboard-mobile {
-        /* display: none; */
-    }
-    .dashboard-mobile__contact-form {
-        text-decoration: underline;
-        display: flex;
-        border: 1px solid #eee;
-        justify-content: center;
-        color: green;
-    }
-   
-     
+    /* Medium devices (landscape tablets, 768px and up) */
+    @media screen and (min-width: 768px) {
+        .dashboard {
+            display: grid;
+            grid-template-columns: repeat(3, 32.5%);
+            grid-auto-rows: repeat(3, 32.5%);
+            gap: 10px;
+            padding: 10px; 
+        }
+
+        .dashboard__todolist {
+            grid-row: 1 / 3;
+        } 
+    }    
 </style>
