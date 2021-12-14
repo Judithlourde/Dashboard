@@ -1,5 +1,5 @@
 <template>
-    <SortTableContent class="table" :class="{sortTableView:!sortTableView}"/>
+    <SortTableContent :class="{sortTableView:!sortTableView}"/>
 </template>
 
 <script>
