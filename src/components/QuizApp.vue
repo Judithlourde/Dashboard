@@ -36,17 +36,17 @@
         <!-- if quiz is at end, display this -->
         <div v-else>
             <div v-if="score > quizData.length / 2">
-                <h3>Gratulerer!</h3>
+                <h3>Congratulations!</h3>
 
-                <p>Du fikk {{ score }} av {{ quizData.length }} poeng!</p>
+                <p>You scored {{ score }} out of {{ quizData.length }} points!</p>
 
                 <p>🥳</p>
             </div>
 
             <div v-else>
-                <h3>Bedre lykke neste gang!</h3>
+                <h3>Better luck next time!</h3>
 
-                <p>Du fikk {{ score }} av {{ quizData.length }} poeng!</p>
+                <p>You scored {{ score }} out of {{ quizData.length }} points.</p>
 
                 <p>🙃</p>
             </div>

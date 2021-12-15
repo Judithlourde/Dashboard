@@ -1,23 +1,24 @@
-import image1 from "/images/blue.jpg"
-import image2 from "/images/red.jpg"
-import image3 from "/images/caesar.jpg"
+import hundreddollarbill from "/images/hundreddollarbill.jpeg"
+import dollarbill from "/images/dollarbill.jpeg"
+import billcollection from "/images/billcollection.jpeg"
+import loosechange from "/images/loosechange.jpeg"
 
 export default {
     state() {
         return {
             quizName: "The big fat quiz about finance and stuff.",
-            // quizId: 0,
             quizData: [ 
                 {
                 id: 1,
-                question: "How much money is the ocean worth?",
-                image: image1,
-                alt: "the ocean is heckin´ huge!",
+                question: "Which denomination of money is the most counterfeited one? (in the US)",
+                image: hundreddollarbill,
+                alt: "Benjamin Franklin",
                 alternatives: [
-                    "$100",
-                    "$100.000",
-                    "$100.000.000",
-                    "Nobody knows..."
+                    "the $1 bill",
+                    "the $5 bill",
+                    "the $10 bill",
+                    "the $20 bill",
+                    "the $100 bill"
                     ],
                 answer: 3,
             
@@ -25,49 +26,50 @@ export default {
 
                 {
                 id: 2,
-                question: "The sun is also pretty big. How many nickles could you fit across it?",
-                image: image2,
-                alt: "the sun is ludicrously beeg!",
+                question: "What is the typical lifespan of a $1 bill?",
+                image: dollarbill,
+                alt: "George Washington",
                 alternatives: [
-                    "A couple",
-                    "A few",
-                    "Some",
-                    "A lot"
+                    "6 months",
+                    "18 months",
+                    "3 years",
+                    "5 years",
+                    "9 years"
                     ],
-                answer: 3,
+                answer: 1,
                 },
 
                 {
                 id: 3,
-                question: "Where are caesar-salads most expensive?",
-                image: image3,
-                alt: "caesar salads; the new currency?",
+                question: "The US has two money printing facilities. How much ink do they use per day combined?",
+                image: billcollection,
+                alt: "Dolla dolla bill, yall!",
                 alternatives: [
-                    "In Rome",
-                    "In Florence",
-                    "In Monaco",
-                    "In Tijuana",
-                    "In Oslo"
+                    "1.2 tons of ink",
+                    "2.5 tons of ink",
+                    "4.9 tons of ink",
+                    "7.8 tons of ink",
+                    "9.7 tons of ink"
                     ],
                 answer: 4,
                 },
 
                 {
                 id: 4,
-                question: "tralalala?",
-                image: image3,
-                alt: "lalala?",
+                question: "How much loose change does the average person have in their house?",
+                image: loosechange,
+                alt: "Loose change",
                 alternatives: [
-                    "la",
-                    "le",
-                    "li",
-                    "lo",
-                    "lu"
+                    "$18",
+                    "$29",
+                    "$42",
+                    "$56",
+                    "$63",
+                    "$78"
                     ],
-                answer: 0,
+                answer: 3,
                 }
             ],
-            // score: 0,
         }
     },
 
