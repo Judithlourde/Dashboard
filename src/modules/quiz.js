@@ -9,7 +9,6 @@ export default {
             quizName: "The big fat quiz about finance and stuff.",
             quizData: [ 
                 {
-                id: 1,
                 question: "Which denomination of money is the most counterfeited one? (in the US)",
                 image: hundreddollarbill,
                 alt: "Benjamin Franklin",
@@ -25,7 +24,6 @@ export default {
                 },
 
                 {
-                id: 2,
                 question: "What is the typical lifespan of a $1 bill?",
                 image: dollarbill,
                 alt: "George Washington",
@@ -40,7 +38,6 @@ export default {
                 },
 
                 {
-                id: 3,
                 question: "The US has two money printing facilities. How much ink do they use per day combined?",
                 image: billcollection,
                 alt: "Dolla dolla bill, yall!",
@@ -55,7 +52,6 @@ export default {
                 },
 
                 {
-                id: 4,
                 question: "How much loose change does the average person have in their house?",
                 image: loosechange,
                 alt: "Loose change",

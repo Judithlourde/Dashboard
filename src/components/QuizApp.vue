@@ -1,6 +1,6 @@
 <template>
     <div class="quiz" :class="{quizAppView:quizAppView}">
-        <!-- Insert this unless quiz has no more questions -->
+        <!-- This will be shown untill quiz runs out of questions -->
         <div v-if="quizId < quizData.length">
             <div class="quiz__name">
                 <h1>{{ quizName }}</h1>
@@ -9,16 +9,20 @@
             </div>
 
             <div class="quiz__header">
-                <h2> {{ quizData[quizId].question }} </h2>
+                <h2> {{ quizObject.question }} </h2>
             </div>
 
             <div class="quiz__image">
-                <img :src="quizData[quizId].image" :alt="quizData[quizId].alt">
+                <img :src="quizObject.image" :alt="quizObject.alt">
 
-                <p class="quiz__image-text">{{ quizData[quizId].alt }}</p>
+                <p class="quiz__image-text">{{ quizObject.alt }}</p>
             </div>
 
-            <div class="quiz__alternatives" v-for="(items, index) in quizData[quizId].alternatives" :key="quizData[quizId].alternatives[index]">
+            <!-- key used in v-for might not be optimal? Gave no errors, so it stands.
+            Passing the index so we know what alternative was chosen -->
+            <div class="quiz__alternatives" 
+                v-for="(items, index) in quizObject.alternatives" 
+                :key="quizData[quizId].alternatives[index]">
                 <!-- How the heck do i bind classes to only one button at a time!? -->
                 <!-- edit: I MADE IT! if index === selected!!!-->
                 <button class="quiz__buttons" :class=" index === selected ? 'quiz__buttons--selected' : '' " @click="selectAlternative(index)">{{items}}</button>
@@ -42,7 +46,7 @@
 
                 <p>🥳</p>
             </div>
-
+            <!-- or this, depending on score -->
             <div v-else>
                 <h3>Better luck next time!</h3>
 
@@ -63,7 +67,9 @@
         data() {
             return {
                 quizAppView: false,
+                // quizId refers to the index of the quizData-array in quiz.js
                 quizId: 0,
+                // selected works as a temporary storage for selected answer 
                 selected: null,
                 score: 0
             }
@@ -71,14 +77,18 @@
 
         methods: {
             nextQuestion() {
+                // make sure an option was selected before going to next question
                 if (this.selected === null) {
                     alert('You have not selected an option. Please do so.')
                     return
                 }
             
+                // if value stored in data.selected equals the index of the answer
+                // increase score by one
                 if (this.selected === this.quizData[this.quizId].answer) {
                     this.score++;
                 }
+                // go to next question and reset temporary selected value
                 this.quizId++;
                 this.selected = null;
             },
@@ -94,6 +104,10 @@
         },
 
         computed: {
+            quizObject() {
+                return this.quizData[this.quizId]
+            },
+
             quizName() {
                 return this.$store.getters.getQuizName
             },
@@ -110,6 +124,7 @@
 </script>
 
 <style>
+    /* */
     .quiz {
         min-width: calc(200px + 1%);
         padding-top: 2vh; 
