@@ -37,14 +37,16 @@
 
                 <div class="form__message">
                     <label for="message">Message</label> <br>
-                    
                     <textarea id="" name="message" rows="3" cols="20"></textarea>
-                    <!-- <input type="text" size="50"> -->
                 </div>
 
                 <div class="form__conditions">    
-                    <input type="checkbox" name="terms">
-                    <label for="terms">I HAVE READ THE <span><a href="">TERMS AND CONDITIONS</a></span> </label>    
+                    <input type="checkbox" name="terms" required>
+                    <label for="terms">I HAVE READ THE<span><a href="https://en.wikipedia.org/wiki/Terms_of_service" target="_blank">TERMS AND CONDITIONS</a></span> </label>    
+                </div>
+
+                <div>
+                    <button class="form__submit" type="submit" aria-label="submit button">SUBMIT</button>
                 </div>
             </fieldset>
         </form>
@@ -160,6 +162,11 @@
     .form__conditions label span > a  {
         color: var(--purple);
         padding: 10px;
+    }
+
+    .form__submit {
+        margin: 1rem;
+        padding: .5rem;    
     }
 
     /* styling contact-form view */

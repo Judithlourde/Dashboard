@@ -7,6 +7,7 @@ import SortTableView from './views/SortTableView.vue';
 import ContactFormView from './views/ContactFormView.vue';
 
 // Export the View-Page routes => this will be shown in the URL
+// (missing catch-all 😬)
 export default [
     { name: 'contact', path: '/contact-form', component: ContactFormView },
     { name: 'transaction', path: '/transaction', component: SortTableView },
